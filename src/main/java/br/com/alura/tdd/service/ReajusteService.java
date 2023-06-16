@@ -10,6 +10,12 @@ public class ReajusteService {
         if(desempenho == Desempenho.A_DESEJAR) {
            BigDecimal valorReajuste =  funcionario.getSalario().multiply(new BigDecimal("0.03"));
            funcionario.aplicarAumento(valorReajuste);
+        } else if (desempenho == Desempenho.BOM) {
+            BigDecimal valorReajuste =  funcionario.getSalario().multiply(new BigDecimal("0.10"));
+            funcionario.aplicarAumento(valorReajuste);
+        } else {
+            BigDecimal valorReajuste =  funcionario.getSalario().multiply(new BigDecimal("0.30"));
+            funcionario.aplicarAumento(valorReajuste);
         }
     }
 }
