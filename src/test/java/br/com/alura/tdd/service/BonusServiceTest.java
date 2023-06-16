@@ -15,7 +15,8 @@ class BonusServiceTest {
 
         Funcionario funcionario = new Funcionario("Vinicius", LocalDate.now(), new BigDecimal(25000));
         BonusService bonusService = new BonusService();
-        assertEquals(BigDecimal.ZERO, bonusService.calcularBonus(funcionario));
+        assertThrows(RuntimeException.class,
+                () -> bonusService.calcularBonus(funcionario));
     }
 
     @Test
